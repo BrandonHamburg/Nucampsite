@@ -7,9 +7,13 @@ import {
   CardBody,
   CardTitle,
 } from "reactstrap";
-import { COMMENTS } from "../shared/comments";
+// import { COMMENTS } from "../shared/comments";
 
 class CampsiteInfoComponent extends Component {
+  constructor(props) {
+    super(props);
+
+  } // end of constructor
   renderCampsite(campsite) {
     return (
       <div class="col-md-5 m-1">
@@ -25,7 +29,7 @@ class CampsiteInfoComponent extends Component {
   }
 
   renderComments(comments) {
-    if (CampsiteInfoComponent.comments) {
+    if (comments) {
       return (
         <div className="col-md-5 m-1">
           <h4>Comments</h4>
@@ -50,8 +54,14 @@ class CampsiteInfoComponent extends Component {
   }
 
   render() {
-    if (CampsiteInfoComponent.campsite) {
-      return <div className="row">{this.renderCampsite(this.campsite)}</div>;
+    if (this.props.campsite) {
+      return (
+        <div className="row">
+          {this.renderCampsite(this.props.campsite)}
+          {this.renderComments(this.props.campsite.comments)}
+        </div>
+      );
+
     }
     return <div></div>;
   }

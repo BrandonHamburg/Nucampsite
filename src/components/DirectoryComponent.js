@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "reactstrap";
 import CampsiteInfoComponent from "./CampsiteInfoComponent";
-import { comments } from comments;
+// import { comments } from comments;
 
 class Directory extends Component {
   constructor(props) {
